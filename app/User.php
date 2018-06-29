@@ -2,8 +2,11 @@
 
 namespace App;
 
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
+use App\Micropost;
 
 class User extends Authenticatable
 {
@@ -100,7 +103,7 @@ class User extends Authenticatable
             return false;
         }else{
             
-            $this->favorits()->attach($micropostsId);
+            $this->favorites()->attach($micropostsId);
             return true;
         }
     }

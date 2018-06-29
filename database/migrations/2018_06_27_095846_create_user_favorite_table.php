@@ -22,7 +22,7 @@ class CreateUserFavoriteTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('microposts_id')->references('id')->on('microposts')->onDelete('cascade');
        
-            $table->unique(['user_id', 'microposts_id']);
+            $table->unique(['user_id','microposts_id']);
             
         });
     }
